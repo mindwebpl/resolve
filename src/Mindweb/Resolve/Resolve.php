@@ -1,13 +1,38 @@
 <?php
 namespace Mindweb\Resolve;
 
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Mindweb\Subscriber\Subscriber;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-abstract class Resolve implements EventSubscriberInterface
+abstract class Resolve implements Subscriber
 {
     const RESOLVE_EVENT = 'tracker.resolve';
 
-    const DEFAULT_PRIORITY = 10;
+    /**
+     * @return string
+     */
+    public final function getEventName()
+    {
+        return self::RESOLVE_EVENT;
+    }
+
+    /**
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+            array('resolve', $this->getPriority())
+        );
+    }
+
+    /**
+     * @return null|ConfigurationInterface
+     */
+    public function getConfiguration()
+    {
+        return null;
+    }
 
     /**
      * @param Event\ResolveEvent $resolveEvent
@@ -17,21 +42,8 @@ abstract class Resolve implements EventSubscriberInterface
     /**
      * @return int
      */
-    public static function getPriority()
+    protected function getPriority()
     {
-        return self::DEFAULT_PRIORITY;
-    }
-
-    /**
-     * @inherited
-     */
-    public static function getSubscribedEvents()
-    {
-        return array(
-            self::RESOLVE_EVENT => array(
-                'resolve',
-                self::getPriority()
-            )
-        );
+        return 10;
     }
 } 
