@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "mindweb/recognizer": "1.0.*",
+        "mindweb/recognizer": "dev-master",
         "symfony/event-dispatcher": "~2.3,<2.7",
         "symfony/http-foundation": "~2.3,<2.7"
     },
