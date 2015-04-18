@@ -35,6 +35,14 @@ abstract class Resolve implements Subscriber
     }
 
     /**
+     * @param array $configuration
+     */
+    public function initialize(array $configuration = array())
+    {
+
+    }
+
+    /**
      * @param Event\ResolveEvent $resolveEvent
      */
     abstract public function resolve(Event\ResolveEvent $resolveEvent);
