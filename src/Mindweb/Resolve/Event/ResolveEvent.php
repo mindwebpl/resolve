@@ -1,16 +1,16 @@
 <?php
 namespace Mindweb\Resolve\Event;
 
+use Mindweb\Persist\Event\PersistEvent;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\Response;
-use Mindweb\Recognizer\Event\AttributionEvent;
 
 class ResolveEvent extends Event
 {
     /**
-     * @var AttributionEvent
+     * @var PersistEvent
      */
-    private $attributionEvent;
+    private $persistEvent;
 
     /**
      * @var Response
@@ -18,12 +18,12 @@ class ResolveEvent extends Event
     private $response;
 
     /**
-     * @param AttributionEvent $attributionEvent
+     * @param PersistEvent $persistEvent
      * @param Response $response
      */
-    public function __construct(AttributionEvent $attributionEvent, Response $response)
+    public function __construct(PersistEvent $persistEvent, Response $response)
     {
-        $this->attributionEvent = $attributionEvent;
+        $this->persistEvent = $persistEvent;
         $this->response = $response;
     }
 
@@ -40,6 +40,14 @@ class ResolveEvent extends Event
      */
     public function getAttribution()
     {
-        return $this->attributionEvent->getAttribution();
+        return $this->persistEvent->getAttribution();
+    }
+
+    /**
+     * @return array
+     */
+    public function getPersistResults()
+    {
+        return $this->persistEvent->getResults();
     }
 } 

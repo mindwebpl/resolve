@@ -4,20 +4,57 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2142f13627abcfa13c9ff37a493da0de",
+    "hash": "18f6f9b87ea4881f338947a588fce5fb",
     "packages": [
+        {
+            "name": "mindweb/persist",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindwebpl/persist.git",
+                "reference": "c32b68126893167b90ad7b36ec6ed7a40e36285b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindwebpl/persist/zipball/c32b68126893167b90ad7b36ec6ed7a40e36285b",
+                "reference": "c32b68126893167b90ad7b36ec6ed7a40e36285b",
+                "shasum": ""
+            },
+            "require": {
+                "mindweb/recognizer": "dev-master",
+                "mindweb/subscriber": "dev-master",
+                "symfony/event-dispatcher": "~2.3,<2.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mindweb\\Persist\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Czołnowski",
+                    "email": "marcin@czolnowski.net"
+                }
+            ],
+            "time": "2015-04-19 12:22:45"
+        },
         {
             "name": "mindweb/recognizer",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mindwebpl/recognizer.git",
-                "reference": "20c8f030785db8ec6641465915659c9a00e30e76"
+                "reference": "4442734109d813beeb959c02cd9238e4b639f36d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mindwebpl/recognizer/zipball/20c8f030785db8ec6641465915659c9a00e30e76",
-                "reference": "20c8f030785db8ec6641465915659c9a00e30e76",
+                "url": "https://api.github.com/repos/mindwebpl/recognizer/zipball/4442734109d813beeb959c02cd9238e4b639f36d",
+                "reference": "4442734109d813beeb959c02cd9238e4b639f36d",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +78,7 @@
                     "email": "marcin@czolnowski.net"
                 }
             ],
-            "time": "2015-04-04 15:13:35"
+            "time": "2015-04-18 18:08:54"
         },
         {
             "name": "mindweb/subscriber",
@@ -298,6 +335,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "mindweb/recognizer": 20,
+        "mindweb/persist": 20,
         "mindweb/subscriber": 20
     },
     "prefer-stable": false,
